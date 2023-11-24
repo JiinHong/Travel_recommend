@@ -1,0 +1,12 @@
+adventure,11
+rest,9
+exciting,8
+quiet,12
+family,3
+friends,7
+lover,4
+budget,3300
+history,6
+culture,5
+nature,7
+usageCount,9
