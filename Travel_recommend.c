@@ -195,8 +195,10 @@ void recommendDestination(struct UserAnswers *answers, struct CumulativeData *cu
         }
     }
 
+
     printf("\n추천 여행지: %s\n\n", recommendedDestination);
-    
+
+
 printf("\n\n이용자들의 선호도\n\n");
 
 printf("모험 %.1f%% | 휴식 %.1f%%\n\n", 
