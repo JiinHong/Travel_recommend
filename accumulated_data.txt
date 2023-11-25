@@ -2,11 +2,11 @@ adventure,11
 rest,9
 exciting,8
 quiet,12
-family,3
-friends,7
-lover,4
+family,6
+friends,9
+lover,5
 budget,3300
 history,6
 culture,5
-nature,7
-usageCount,9
+nature,9
+usageCount,20

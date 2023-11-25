@@ -195,18 +195,25 @@ void recommendDestination(struct UserAnswers *answers, struct CumulativeData *cu
         }
     }
 
-    printf("추천 여행지: %s\n", recommendedDestination);
+    printf("\n추천 여행지: %s\n\n", recommendedDestination);
     
-    printf("모험: %d\n", cumulativeData->adventure);
-    printf("휴식: %d\n", cumulativeData->rest);
-    printf("분주: %d\n", cumulativeData->exciting);
-    printf("한적: %d\n", cumulativeData->quiet);
-    printf("가족: %d\n", cumulativeData->family);
-    printf("친구: %d\n", cumulativeData->friends);
-    printf("연인: %d\n", cumulativeData->lover);
+printf("\n\n이용자들의 선호도\n\n");
+
+printf("모험 %.1f%% | 휴식 %.1f%%\n\n", 
+    ((float)cumulativeData->adventure * 100) / (cumulativeData->usageCount),
+    ((float)cumulativeData->rest * 100) / (cumulativeData->usageCount));
+
+printf("분주 %.1f%% | 한적 %.1f%%\n\n", 
+    ((float)cumulativeData->exciting * 100) / (cumulativeData->usageCount),
+    ((float)cumulativeData->quiet * 100) / (cumulativeData->usageCount));
+
+printf("가족 %.1f%% | 친구 %.1f%% | 연인 %.1f%%\n\n", 
+    ((float)cumulativeData->family * 100) / (cumulativeData->usageCount),
+    ((float)cumulativeData->friends * 100) / (cumulativeData->usageCount),
+    ((float)cumulativeData->lover * 100) / (cumulativeData->usageCount));
 
     double averageBudget = (double)cumulativeData->budget / cumulativeData->usageCount;
-    printf("여행경비의 평균: %.2lf\n", averageBudget);
+    printf("평균 여행경비: %.2lf\n\n", averageBudget);
 }
 
 int main() {

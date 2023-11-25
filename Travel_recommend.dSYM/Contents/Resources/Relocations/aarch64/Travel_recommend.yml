@@ -1,0 +1,14 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/parkjinhong/Documents/GitHub/Travel_recommend/Travel_recommend'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _readDestinationsFromFile, symObjAddr: 0x0, symBinAddr: 0x100002DFC, symSize: 0x19C }
+  - { offsetInCU: 0x3F, offset: 0x3F, size: 0x8, addend: 0x0, symName: _numDestinations, symObjAddr: 0x2C60, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x69, offset: 0x69, size: 0x8, addend: 0x0, symName: _destinations, symBinAddr: 0x100008004, symSize: 0x0 }
+  - { offsetInCU: 0x102, offset: 0x102, size: 0x8, addend: 0x0, symName: _readDestinationsFromFile, symObjAddr: 0x0, symBinAddr: 0x100002DFC, symSize: 0x19C }
+  - { offsetInCU: 0x136, offset: 0x136, size: 0x8, addend: 0x0, symName: _readCumulativeData, symObjAddr: 0x19C, symBinAddr: 0x100002F98, symSize: 0x1E0 }
+  - { offsetInCU: 0x168, offset: 0x168, size: 0x8, addend: 0x0, symName: _writeCumulativeData, symObjAddr: 0x37C, symBinAddr: 0x100003178, symSize: 0x214 }
+  - { offsetInCU: 0x19A, offset: 0x19A, size: 0x8, addend: 0x0, symName: _askQuestions, symObjAddr: 0x590, symBinAddr: 0x10000338C, symSize: 0x2A4 }
+  - { offsetInCU: 0x1BE, offset: 0x1BE, size: 0x8, addend: 0x0, symName: _recommendDestination, symObjAddr: 0x834, symBinAddr: 0x100003630, symSize: 0x3B0 }
+  - { offsetInCU: 0x252, offset: 0x252, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xBE4, symBinAddr: 0x1000039E0, symSize: 0x170 }
+...

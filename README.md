@@ -17,7 +17,7 @@
 1. 프로젝트 파일을 컴파일하고, 실행시킵니다.
 
 ```bash
-gcc -o travel_recommendation main.c
+gcc -o travel_recommendation Travel_recommend.c
 ```
 
 ```bash
