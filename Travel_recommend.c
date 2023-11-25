@@ -109,7 +109,7 @@ void readCumulativeData(struct CumulativeData *data) {
 
 // 누적 데이터를 파일에 저장
 void writeCumulativeData(struct CumulativeData *data) {
-    FILE *file = fopen("누적데이터.txt", "w");
+    FILE *file = fopen("accumulated_data.txt", "w");
     if (file == NULL) {
         printf("누적데이터 파일을 열 수 없습니다.\n");
         exit(1);
