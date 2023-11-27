@@ -158,7 +158,7 @@ struct CumulativeData {
 
 // 여행지 데이터 읽기
 void readDestinationsFromFile() {
-    FILE *file = fopen("destination_data.txt", "r");
+    FILE *file = fopen("destination_data", "r");
     if (file == NULL) {
         printf("여행지데이터 파일을 열 수 없습니다.\n");
         exit(1);
@@ -189,7 +189,7 @@ void readDestinationsFromFile() {
 
 // 누적 데이터 읽기
 void readCumulativeData(struct CumulativeData *data) {
-    FILE *file = fopen("accumulated_data.txt", "r");
+    FILE *file = fopen("accumulated_data", "r");
     if (file == NULL) {
         printf("파일을 열 수 없습니다.\n");
         exit(1);
@@ -244,7 +244,7 @@ void readCumulativeData(struct CumulativeData *data) {
 
 // 누적 데이터를 파일에 저장
 void writeCumulativeData(struct CumulativeData *data) {
-    FILE *file = fopen("accumulated_data.txt", "w");
+    FILE *file = fopen("accumulated_data", "w");
     if (file == NULL) {
         printf("누적데이터 파일을 열 수 없습니다.\n");
         exit(1);
