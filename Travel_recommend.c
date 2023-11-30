@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define MAX_SIZE 100
-#define MAX_NAME_LENGTH 100
+#define MAX_NAME_LENGTH 1000
 #define MAX_DATA_LENGTH 1000
 
 struct TravelDestination {
@@ -158,7 +158,7 @@ struct CumulativeData {
 void readDestinationsFromFile() {
     FILE *file = fopen("destination_data", "r");
     if (file == NULL) {
-        printf("여행지데이터 파일을 열 수 없습니다.\n");
+        printf("The travel destination data file cannot be opened.\n");
         exit(1);
     }
 
@@ -188,7 +188,7 @@ void readDestinationsFromFile() {
 void readCumulativeData(struct CumulativeData *data) {
     FILE *file = fopen("accumulated_data", "r");
     if (file == NULL) {
-        printf("파일을 열 수 없습니다.\n");
+        printf("The file cannot be opened.\n");
         exit(1);
     }
 
@@ -243,7 +243,7 @@ void readCumulativeData(struct CumulativeData *data) {
 void writeCumulativeData(struct CumulativeData *data) {
     FILE *file = fopen("accumulated_data", "w");
     if (file == NULL) {
-        printf("누적데이터 파일을 열 수 없습니다.\n");
+        printf("Unable to open cumulative data file.\n");
         exit(1);
     }
 
@@ -312,8 +312,8 @@ void askQuestions(struct UserAnswers *answers) {
 
     int preference;
     // 사용자의 답변을 받고, 누적 데이터를 업데이트
-    printf("가고 싶은 여행을 골라보세요!\n");
-    printf("0.해변 1.산악 2.숲 3.강 4.평원: ");
+    printf("Choose the trip you want to go on!\n");
+    printf("0.Beach 1.Mountain 2.Forest 3.River 4.Plain : ");
     scanf("%d", &preference);
     if (preference==0) {
         answers->beach++;
@@ -328,8 +328,8 @@ void askQuestions(struct UserAnswers *answers) {
     }
     answer_beach_mountain_forest_river_plain = preference;
 
-    printf("문화를 즐기고 싶으신가요? 역사를 즐기고 싶으신가요?\n");
-    printf("0.문화 1.역사: ");
+    printf("Do you want to enjoy culture or history?\n");
+    printf("0.culture 1.history : ");
     scanf("%d", &preference);
     if (preference== 0) {
         answers->culture++;
@@ -338,8 +338,8 @@ void askQuestions(struct UserAnswers *answers) {
     }
     answer_culture_history = preference;
 
-    printf("자연을 선호하시나요, 도시를 선호하시나요?\n");
-    printf("0.자연 1.도시: ");
+    printf("Do you prefer nature or the city?\n");
+    printf("0.nature 1.city: ");
     scanf("%d", &preference);
     if (preference== 0) {
         answers->nature++;
@@ -348,7 +348,7 @@ void askQuestions(struct UserAnswers *answers) {
     }
     answer_nature_city = preference;
 
-    printf("야생동물을 관찰하고 싶으신가요? (0: 없음, 1: 있음): ");
+    printf("Want to observe wildlife? (0: No, 1: Yes) : ");
     scanf("%d", &preference);
     if (preference== 0) {
         answers->no_wild_animal++;
@@ -357,8 +357,8 @@ void askQuestions(struct UserAnswers *answers) {
     }
     answer_wildlife = preference;
 
-    printf("여행지가 내륙에 있는지 섬에 있는지 선택하세요.\n");
-    printf("0: 내륙 1: 섬(0 또는 1 중 선택): ");
+    printf("Where would you like to go, inland or on an island?\n");
+    printf("0.inland 1.island : ");
     scanf("%d", &preference);
     if (preference== 0) {
         answers->inland++;
@@ -367,7 +367,7 @@ void askQuestions(struct UserAnswers *answers) {
     }
     answer_inland_island = preference;
 
-    printf("어린이와 함께 가실 예정인가요? (0: 없음, 1: 있음): ");
+    printf("Are you going with children?(0: No, 1: Yes) : ");
     scanf("%d", &preference);
     if (preference== 0) {
         answers->no_children++;
@@ -376,8 +376,8 @@ void askQuestions(struct UserAnswers *answers) {
     }
     answer_children = preference;
 
-    printf("혼자 가실건가요, 친구와 함께 가실건가요, 가족과 함께 가실건가요, 아니면 연인과 함께 가실건가요?\n");
-    printf("0: 혼자 1: 친구 2: 가족 3: 연인 (0부터 3까지 중 선택): ");
+    printf("Are you going alone, with a friend, with family, or with your lover?\n");
+    printf("0.alone 1.friends 2.family 3.lover : ");
     scanf("%d", &preference);
     if (preference== 0) {
         answers->alone++;
@@ -390,7 +390,7 @@ void askQuestions(struct UserAnswers *answers) {
     }
     answer_alone_friends_family_lover = preference;
 
-    printf("여행을 가는 인원수를 선택하세요. (0부터 9까지 중 선택): ");
+    printf("Please select the number of people traveling. (Select from 0 to 9) : ");
     scanf("%d", &preference);
     if (preference== 0) {
         answers->unknown_number_of_people_traveling++;
@@ -415,7 +415,7 @@ void askQuestions(struct UserAnswers *answers) {
     }
     answer_num_travelers = preference;
 
-    printf("모험을 즐기실 건가요, 휴양을 즐기실 건가요? (0: 모험, 1: 휴양): ");
+    printf("Are you going for adventure or recreation? (0.Adventure 1.relax) : ");
     scanf("%d", &preference);
     if (preference== 0) {
         answers->adventure++;
@@ -424,7 +424,7 @@ void askQuestions(struct UserAnswers *answers) {
     }
     answer_adventure_leisure = preference;
 
-    printf("여행지가 생소한 곳인지 익숙한 곳인지 선택하세요. (0: 생소, 1: 익숙): ");
+    printf("Choose whether your travel destination is unfamiliar or familiar. (0.unfamiliar 1.familiar) : ");
     scanf("%d", &preference);
     if (preference== 0) {
         answers->unfamiliar++;
@@ -433,7 +433,7 @@ void askQuestions(struct UserAnswers *answers) {
     }
     answer_unfamiliar_familiar = preference;
 
-    printf("여행 경비를 선택하세요. (0부터 9까지 중 선택): ");
+    printf("Choose your travel expenses. \n %dwon : %d \n %dwon ~ %dwon : %d \n %dwon ~ %dwon : %d \n %dwon ~ %dwon : %d \n %dwon ~ %dwon : %d \n %dwon ~ %dwon : %d \n %dwon ~ %dwon : %d \n %dwon ~ %dwon : %d \n %dwon ~ %dwon : %d \n %dwon ~ : %d \n : ", 250000, 0, 500000, 750000, 1, 750000, 1000000, 2, 1000000, 1250000, 3, 1250000, 1500000, 4, 1500000, 1750000, 5, 1750000, 2000000, 6, 2000000, 2250000, 7, 2250000, 2500000, 8, 2500000, 9);
     scanf("%d", &preference);
     if (preference== 0) {
         answers->budget_range0++;
@@ -497,17 +497,17 @@ void recommendDestination(struct UserAnswers *answers, struct CumulativeData *cu
             strcpy(answer_destinations[i], "none");
         }
         }
-printf("\n추천 여행지: ");
+printf("\nRecommended travel destinations : ");
 for (int i = 0; i < numDestinations; i++) {
     if (strcmp(answer_destinations[i], "none") != 0) {
         printf("%s ", answer_destinations[i]);
     }
 }
 
-printf("\n\n이용자들의 선호도\n\n");
+printf("\n\nUser preference statistics\n\n");
 
 int sum = cumulativeData->beach + cumulativeData->mountain + cumulativeData->forest + cumulativeData->river + cumulativeData->plain;
-printf("해변 %.1f%% | 산악 %.1f%% | 숲 %.1f%% | 강 %.1f%% | 평원 %.1f%% \n\n", 
+printf("beach %.1f%% | mountain %.1f%% | forest %.1f%% | river %.1f%% | plain %.1f%% \n\n", 
     ((float)cumulativeData->beach * 100) / (sum),
     ((float)cumulativeData->mountain * 100) / (sum),
     ((float)cumulativeData->forest * 100) / (sum),
@@ -515,39 +515,39 @@ printf("해변 %.1f%% | 산악 %.1f%% | 숲 %.1f%% | 강 %.1f%% | 평원 %.1f%% 
     ((float)cumulativeData->plain * 100) / (sum));
 
 sum = cumulativeData->culture + cumulativeData->history;
-printf("문화 %.1f%% | 역사 %.1f%% \n\n", 
+printf("culture %.1f%% | history %.1f%% \n\n", 
     ((float)cumulativeData->culture * 100) / (sum),
     ((float)cumulativeData->history * 100) / (sum));
 
 sum = cumulativeData->nature + cumulativeData->city;
-printf("자연 %.1f%% | 도시 %.1f%% \n\n", 
+printf("nature %.1f%% | city %.1f%% \n\n", 
     ((float)cumulativeData->nature * 100) / (sum),
     ((float)cumulativeData->city * 100) / (sum));
 
 sum = cumulativeData->no_wild_animal + cumulativeData->wild_animal;
-printf("야생동물x %.1f%% | 야생동물o %.1f%% \n\n", 
+printf("wild animals(x) %.1f%% | wild animals(o) %.1f%% \n\n", 
     ((float)cumulativeData->no_wild_animal * 100) / (sum),
     ((float)cumulativeData->wild_animal * 100) / (sum));
 
 sum = cumulativeData->inland + cumulativeData->island;
-printf("내륙 %.1f%% | 섬 %.1f%% \n\n", 
+printf("inland %.1f%% | island %.1f%% \n\n", 
     ((float)cumulativeData->inland * 100) / (sum),
     ((float)cumulativeData->island * 100) / (sum));
 
 sum = cumulativeData->no_children + cumulativeData->children;
-printf("어린이x %.1f%% | 어린이o %.1f%% \n\n", 
+printf("children(x) %.1f%% | children(o) %.1f%% \n\n", 
     ((float)cumulativeData->no_children * 100) / (sum),
     ((float)cumulativeData->children * 100) / (sum));
 
 sum = cumulativeData->alone + cumulativeData->friends + cumulativeData->family + cumulativeData->lover;
-printf("혼자 %.1f%% | 친구 %.1f%% | 가족 %.1f%% | 연인 %.1f%% \n\n", 
+printf("alone %.1f%% | friends %.1f%% | family %.1f%% | lover %.1f%% \n\n", 
     ((float)cumulativeData->alone * 100) / (sum),
     ((float)cumulativeData->friends * 100) / (sum),
     ((float)cumulativeData->family * 100) / (sum),
     ((float)cumulativeData->lover * 100) / (sum));
 
 sum = cumulativeData->unknown_number_of_people_traveling + cumulativeData->one + cumulativeData->two + cumulativeData->three + cumulativeData->four + cumulativeData->five + cumulativeData->six + cumulativeData->seven + cumulativeData->eight + cumulativeData->nine;
-printf("인원수 미정 %.1f%% | 1명 %.1f%% | 2명 %.1f%% | 3명 %.1f%% | 4명 %.1f%% | 5명 %.1f%% | 6명 %.1f%% | 7명 %.1f%% | 8명 %.1f%% | 9명 %.1f%% \n\n", 
+printf("not determined %.1f%% | 1 %.1f%% | 2 %.1f%% | 3 %.1f%% | 4 %.1f%% | 5 %.1f%% | 6 %.1f%% | 7 %.1f%% | 8 %.1f%% | 9 %.1f%% \n\n", 
     ((float)cumulativeData->unknown_number_of_people_traveling * 100) / (sum),
     ((float)cumulativeData->one * 100) / (sum),
     ((float)cumulativeData->two * 100) / (sum),
@@ -560,12 +560,12 @@ printf("인원수 미정 %.1f%% | 1명 %.1f%% | 2명 %.1f%% | 3명 %.1f%% | 4명
     ((float)cumulativeData->nine * 100) / (sum));
 
 sum = cumulativeData->adventure + cumulativeData->relax;
-printf("모험 %.1f%% | 휴양 %.1f%% \n\n", 
+printf("adventure %.1f%% | relax %.1f%% \n\n", 
     ((float)cumulativeData->adventure * 100) / (sum),
     ((float)cumulativeData->relax * 100) / (sum));
 
 sum = cumulativeData->unfamiliar + cumulativeData->familiar;
-printf("생소 %.1f%% | 익숙 %.1f%% \n\n", 
+printf("unfamilar %.1f%% | familiar %.1f%% \n\n", 
     ((float)cumulativeData->unfamiliar * 100) / (sum),
     ((float)cumulativeData->familiar * 100) / (sum));
 
@@ -591,7 +591,7 @@ int sum1 = cumulativeData->budget_range0 +
           cumulativeData->budget_range8 +
           cumulativeData->budget_range9;
 
-printf("평균 여행경비 %d원\n\n" , sum / sum1);
+printf("average travel cost %dwon\n\n" , sum / sum1);
 }
 
 int main() {
