@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define MAX_SIZE 100
-#define MAX_NAME_LENGTH 1000
+#define MAX_NAME_LENGTH 100
 #define MAX_DATA_LENGTH 1000
 
 struct TravelDestination {
@@ -30,8 +30,6 @@ struct TravelDestination {
     int unfamiliar_familiar;
 
     int budget_range;
-
-    int preference[MAX_DATA_LENGTH];
 };
 
 struct TravelDestination destinations[1000] = {0};
@@ -178,8 +176,7 @@ void readDestinationsFromFile() {
                 &destinations[numDestinations].num_travelers,
                 &destinations[numDestinations].adventure_leisure,
                 &destinations[numDestinations].unfamiliar_familiar,
-                &destinations[numDestinations].budget_range,
-               destinations[numDestinations].preference);
+                &destinations[numDestinations].budget_range);
 
         numDestinations++;
     }
@@ -313,153 +310,153 @@ int answer_budget_range;
 // 사용자에게 질문 & 답변 저장
 void askQuestions(struct UserAnswers *answers) {
 
-
+    int preference;
     // 사용자의 답변을 받고, 누적 데이터를 업데이트
     printf("가고 싶은 여행을 골라보세요!\n");
     printf("0.해변 1.산악 2.숲 3.강 4.평원: ");
-    scanf("%d", answers->preference);
-    if (*(answers->preference)==0) {
+    scanf("%d", &preference);
+    if (preference==0) {
         answers->beach++;
-    } else if (*(answers->preference)== 1) {
+    } else if (preference== 1) {
         answers->mountain++;
-    } else if (*(answers->preference)== 2) {
+    } else if (preference== 2) {
         answers->forest++;
-    } else if (*(answers->preference)== 3) {
+    } else if (preference== 3) {
         answers->river++;
-    } else if (*(answers->preference)== 4) {
+    } else if (preference== 4) {
         answers->plain++;
     }
-    answer_beach_mountain_forest_river_plain = answers->preference[0];
+    answer_beach_mountain_forest_river_plain = preference;
 
     printf("문화를 즐기고 싶으신가요? 역사를 즐기고 싶으신가요?\n");
     printf("0.문화 1.역사: ");
-    scanf("%d", answers->preference);
-    if (*(answers->preference)== 0) {
+    scanf("%d", &preference);
+    if (preference== 0) {
         answers->culture++;
-    } else if (*(answers->preference)== 1) {
+    } else if (preference== 1) {
         answers->history++;
     }
-    answer_culture_history = answers->preference[0];
+    answer_culture_history = preference;
 
     printf("자연을 선호하시나요, 도시를 선호하시나요?\n");
     printf("0.자연 1.도시: ");
-    scanf("%d", answers->preference);
-    if (*(answers->preference)== 0) {
+    scanf("%d", &preference);
+    if (preference== 0) {
         answers->nature++;
-    } else if (*(answers->preference)== 1) {
+    } else if (preference== 1) {
         answers->city++;
     }
-    answer_nature_city = answers->preference[0];
+    answer_nature_city = preference;
 
     printf("야생동물을 관찰하고 싶으신가요? (0: 없음, 1: 있음): ");
-    scanf("%d", answers->preference);
-    if (*(answers->preference)== 0) {
+    scanf("%d", &preference);
+    if (preference== 0) {
         answers->no_wild_animal++;
-    } else if (*(answers->preference)== 1) {
+    } else if (preference== 1) {
         answers->wild_animal++;
     }
-    answer_wildlife = answers->preference[0];
+    answer_wildlife = preference;
 
     printf("여행지가 내륙에 있는지 섬에 있는지 선택하세요.\n");
     printf("0: 내륙 1: 섬(0 또는 1 중 선택): ");
-    scanf("%d", answers->preference);
-    if (*(answers->preference)== 0) {
+    scanf("%d", &preference);
+    if (preference== 0) {
         answers->inland++;
-    } else if (*(answers->preference)== 1) {
+    } else if (preference== 1) {
         answers->island++;
     }
-    answer_inland_island = answers->preference[0];
+    answer_inland_island = preference;
 
     printf("어린이와 함께 가실 예정인가요? (0: 없음, 1: 있음): ");
-    scanf("%d", answers->preference);
-    if (*(answers->preference)== 0) {
+    scanf("%d", &preference);
+    if (preference== 0) {
         answers->no_children++;
-    } else if (*(answers->preference)== 1) {
+    } else if (preference== 1) {
         answers->children++;
     }
-    answer_children = answers->preference[0];
+    answer_children = preference;
 
     printf("혼자 가실건가요, 친구와 함께 가실건가요, 가족과 함께 가실건가요, 아니면 연인과 함께 가실건가요?\n");
     printf("0: 혼자 1: 친구 2: 가족 3: 연인 (0부터 3까지 중 선택): ");
-    scanf("%d", answers->preference);
-    if (*(answers->preference)== 0) {
+    scanf("%d", &preference);
+    if (preference== 0) {
         answers->alone++;
-    } else if (*(answers->preference)== 1) {
+    } else if (preference== 1) {
         answers->friends++;
-    } else if (*(answers->preference)== 2) {
+    } else if (preference== 2) {
         answers->family++;
-    } else if (*(answers->preference)== 3) {
+    } else if (preference== 3) {
         answers->lover++;
     }
-    answer_alone_friends_family_lover = answers->preference[0];
+    answer_alone_friends_family_lover = preference;
 
     printf("여행을 가는 인원수를 선택하세요. (0부터 9까지 중 선택): ");
-    scanf("%d", answers->preference);
-    if (*(answers->preference)== 0) {
+    scanf("%d", &preference);
+    if (preference== 0) {
         answers->unknown_number_of_people_traveling++;
-    } else if (*(answers->preference)== 1) {
+    } else if (preference== 1) {
         answers->one++;
-    } else if (*(answers->preference)==2) {
+    } else if (preference==2) {
         answers->two++;
-    } else if (*(answers->preference)==3) {
+    } else if (preference==3) {
         answers->three++;
-    } else if (*(answers->preference)==4) {
+    } else if (preference==4) {
         answers->four++;
-    } else if (*(answers->preference)==5) {
+    } else if (preference==5) {
         answers->five++;
-    } else if (*(answers->preference)==6) {
+    } else if (preference==6) {
         answers->six++;
-    } else if (*(answers->preference)==7) {
+    } else if (preference==7) {
         answers->seven++;
-    } else if (*(answers->preference)==8) {
+    } else if (preference==8) {
         answers->eight++;
-    } else if (*(answers->preference)==9) {
+    } else if (preference==9) {
         answers->nine++;
     }
-    answer_num_travelers = answers->preference[0];
+    answer_num_travelers = preference;
 
     printf("모험을 즐기실 건가요, 휴양을 즐기실 건가요? (0: 모험, 1: 휴양): ");
-    scanf("%d", answers->preference);
-    if (*(answers->preference)== 0) {
+    scanf("%d", &preference);
+    if (preference== 0) {
         answers->adventure++;
-    } else if (*(answers->preference)== 1) {
+    } else if (preference== 1) {
         answers->relax++;
     }
-    answer_adventure_leisure = answers->preference[0];
+    answer_adventure_leisure = preference;
 
     printf("여행지가 생소한 곳인지 익숙한 곳인지 선택하세요. (0: 생소, 1: 익숙): ");
-    scanf("%d", answers->preference);
-    if (*(answers->preference)== 0) {
+    scanf("%d", &preference);
+    if (preference== 0) {
         answers->unfamiliar++;
-    } else if (*(answers->preference)==1) {
+    } else if (preference==1) {
         answers->familiar++;
     }
-    answer_unfamiliar_familiar = *answers->preference;
+    answer_unfamiliar_familiar = preference;
 
     printf("여행 경비를 선택하세요. (0부터 9까지 중 선택): ");
-    scanf("%d", answers->preference);
-    if (*(answers->preference)== 0) {
+    scanf("%d", &preference);
+    if (preference== 0) {
         answers->budget_range0++;
-    } else if (*(answers->preference)== 1) {
+    } else if (preference== 1) {
         answers->budget_range1++;
-    } else if (*(answers->preference)==2) {
+    } else if (preference==2) {
         answers->budget_range2++;
-    } else if (*(answers->preference)==3) {
+    } else if (preference==3) {
         answers->budget_range3++;
-    } else if (*(answers->preference)==4) {
+    } else if (preference==4) {
         answers->budget_range4++;
-    } else if (*(answers->preference)==5) {
+    } else if (preference==5) {
         answers->budget_range5++;
-    } else if (*(answers->preference)==6) {
+    } else if (preference==6) {
         answers->budget_range6++;
-    } else if (*(answers->preference)==7) {
+    } else if (preference==7) {
         answers->budget_range7++;
-    } else if (*(answers->preference)==8) {
+    } else if (preference==8) {
         answers->budget_range8++;
-    } else if (*(answers->preference)==9) {
+    } else if (preference==9) {
         answers->budget_range9++;
     }
-    answer_budget_range = *answers->preference;
+    answer_budget_range = preference;
 }
 
 // 여행지 추천
