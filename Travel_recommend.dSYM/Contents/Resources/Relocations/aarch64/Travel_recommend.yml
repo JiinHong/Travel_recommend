@@ -2,9 +2,9 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/parkjinhong/Documents/GitHub/Travel_recommend/Travel_recommend'
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _readDestinationsFromFile, symObjAddr: 0x0, symBinAddr: 0x100000B6C, symSize: 0x220 }
-  - { offsetInCU: 0x3F, offset: 0x3F, size: 0x8, addend: 0x0, symName: _destinations, symObjAddr: 0x6A2C, symBinAddr: 0x100008000, symSize: 0x0 }
-  - { offsetInCU: 0x128, offset: 0x128, size: 0x8, addend: 0x0, symName: _numDestinations, symObjAddr: 0x10584C, symBinAddr: 0x100106E20, symSize: 0x0 }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _readDestinationsFromFile, symObjAddr: 0x0, symBinAddr: 0x100000B5C, symSize: 0x220 }
+  - { offsetInCU: 0x3F, offset: 0x3F, size: 0x8, addend: 0x0, symName: _destinations, symObjAddr: 0x69DC, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x128, offset: 0x128, size: 0x8, addend: 0x0, symName: _numDestinations, symObjAddr: 0x1057FC, symBinAddr: 0x100106E20, symSize: 0x0 }
   - { offsetInCU: 0x13E, offset: 0x13E, size: 0x8, addend: 0x0, symName: _answer_beach_mountain_forest_river_plain, symBinAddr: 0x100106E2C, symSize: 0x0 }
   - { offsetInCU: 0x154, offset: 0x154, size: 0x8, addend: 0x0, symName: _answer_culture_history, symBinAddr: 0x100106E38, symSize: 0x0 }
   - { offsetInCU: 0x16A, offset: 0x16A, size: 0x8, addend: 0x0, symName: _answer_nature_city, symBinAddr: 0x100106E40, symSize: 0x0 }
@@ -16,10 +16,10 @@ relocations:
   - { offsetInCU: 0x1EE, offset: 0x1EE, size: 0x8, addend: 0x0, symName: _answer_adventure_leisure, symBinAddr: 0x100106E24, symSize: 0x0 }
   - { offsetInCU: 0x204, offset: 0x204, size: 0x8, addend: 0x0, symName: _answer_unfamiliar_familiar, symBinAddr: 0x100106E48, symSize: 0x0 }
   - { offsetInCU: 0x21A, offset: 0x21A, size: 0x8, addend: 0x0, symName: _answer_budget_range, symBinAddr: 0x100106E30, symSize: 0x0 }
-  - { offsetInCU: 0x22B, offset: 0x22B, size: 0x8, addend: 0x0, symName: _readDestinationsFromFile, symObjAddr: 0x0, symBinAddr: 0x100000B6C, symSize: 0x220 }
-  - { offsetInCU: 0x25F, offset: 0x25F, size: 0x8, addend: 0x0, symName: _readCumulativeData, symObjAddr: 0x220, symBinAddr: 0x100000D8C, symSize: 0x5C4 }
-  - { offsetInCU: 0x291, offset: 0x291, size: 0x8, addend: 0x0, symName: _writeCumulativeData, symObjAddr: 0x7E4, symBinAddr: 0x100001350, symSize: 0x670 }
-  - { offsetInCU: 0x2C3, offset: 0x2C3, size: 0x8, addend: 0x0, symName: _askQuestions, symObjAddr: 0xE54, symBinAddr: 0x1000019C0, symSize: 0xB10 }
-  - { offsetInCU: 0x2F8, offset: 0x2F8, size: 0x8, addend: 0x0, symName: _recommendDestination, symObjAddr: 0x1964, symBinAddr: 0x1000024D0, symSize: 0xDC0 }
-  - { offsetInCU: 0x3F7, offset: 0x3F7, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x2724, symBinAddr: 0x100003290, symSize: 0x344 }
+  - { offsetInCU: 0x22B, offset: 0x22B, size: 0x8, addend: 0x0, symName: _readDestinationsFromFile, symObjAddr: 0x0, symBinAddr: 0x100000B5C, symSize: 0x220 }
+  - { offsetInCU: 0x25F, offset: 0x25F, size: 0x8, addend: 0x0, symName: _readCumulativeData, symObjAddr: 0x220, symBinAddr: 0x100000D7C, symSize: 0x5C4 }
+  - { offsetInCU: 0x291, offset: 0x291, size: 0x8, addend: 0x0, symName: _writeCumulativeData, symObjAddr: 0x7E4, symBinAddr: 0x100001340, symSize: 0x670 }
+  - { offsetInCU: 0x2C3, offset: 0x2C3, size: 0x8, addend: 0x0, symName: _askQuestions, symObjAddr: 0xE54, symBinAddr: 0x1000019B0, symSize: 0xB10 }
+  - { offsetInCU: 0x2F8, offset: 0x2F8, size: 0x8, addend: 0x0, symName: _recommendDestination, symObjAddr: 0x1964, symBinAddr: 0x1000024C0, symSize: 0xDC0 }
+  - { offsetInCU: 0x3AD, offset: 0x3AD, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x2724, symBinAddr: 0x100003280, symSize: 0x344 }
 ...

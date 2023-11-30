@@ -468,8 +468,8 @@ void recommendDestination(struct UserAnswers *answers, struct CumulativeData *cu
     int highestScore = -1;
     int score_arr[1000];
     char answer_destinations[1000][20];
-
-        for (int i = 0; i < numDestinations; i++) {
+    int i;
+        for (i = 0; i < numDestinations; i++) {
         int score = 0;        
         score += destinations[i].beach_mountain_forest_river_plain == answer_beach_mountain_forest_river_plain ? 1 : 0;
         score += destinations[i].culture_history == answer_culture_history ? 1 : 0;
@@ -489,7 +489,7 @@ void recommendDestination(struct UserAnswers *answers, struct CumulativeData *cu
         }
         }
 
-        for (int i = 0; i < numDestinations; i++) {
+        for (i = 0; i < numDestinations; i++) {
         if (score_arr[i] == highestScore) {
             strcpy(answer_destinations[i], destinations[i].name);
         }
@@ -498,7 +498,7 @@ void recommendDestination(struct UserAnswers *answers, struct CumulativeData *cu
         }
         }
 printf("\nRecommended travel destinations : ");
-for (int i = 0; i < numDestinations; i++) {
+for (i = 0; i < numDestinations; i++) {
     if (strcmp(answer_destinations[i], "none") != 0) {
         printf("%s ", answer_destinations[i]);
     }
