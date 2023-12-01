@@ -21,15 +21,14 @@ int main(void) {
     return 0;
 }
 
-
+int error_handling[11][2] = { {MIN_VAL, 4}, {MIN_VAL, 1}, {MIN_VAL, 1}, {MIN_VAL, 1}, {MIN_VAL, 1},
+{MIN_VAL, 1}, {MIN_VAL, 3}, {1, MAX_VAL}, {MIN_VAL, 1}, {MIN_VAL, 1}, {MIN_VAL, MAX_VAL} };
 void instanceAdd() {
-    int error_handling[11][2] = { {MIN_VAL, 4}, {MIN_VAL, 1}, {MIN_VAL, 1}, {MIN_VAL, 1}, {MIN_VAL, 1},
-    {MIN_VAL, 1}, {MIN_VAL, 3}, {1, MAX_VAL}, {MIN_VAL, 1}, {MIN_VAL, 1}, {MIN_VAL, MAX_VAL} };
     char name[20] = { 0, };
     int i;
     FILE* f_destinations;
 
-    f_destinations = fopen("travel_destinations.txt", "a");
+    f_destinations = fopen("destination_data", "a");
 
     printf("instance name: ");
     scanf("%s", name);
@@ -72,7 +71,7 @@ void instanceModify() {   //modifying instance
     char temp[8192] = { 0, };
     int n, num = 0, end = 1, i = 0, val;
 
-    fd_destinations = open("travel_destinations.txt", O_RDWR);
+    fd_destinations = open("destination_data", O_RDWR);
 
     n = read(fd_destinations, temp, 8192);
 
@@ -101,8 +100,13 @@ void instanceModify() {   //modifying instance
             printf("wrong value\n");
         }
         else {
-            printf("write value: ");
+            printf("write value (%d ~ %d): ", error_handling[num][0], error_handling[num][1]);
             scanf("%s", &temp);
+
+            if (temp[0] < error_handling[num][0] + 48 || temp[0] > error_handling[num][1] + 48) {
+                printf("wrong value\n");
+                continue;
+            }
             lseek(fd_destinations, i + 2 * num + 1, SEEK_SET);
             write(fd_destinations, temp, 1);
         }
