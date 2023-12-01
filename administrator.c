@@ -8,8 +8,16 @@
 void instanceAdd();
 void instanceModify();
 int main(void) {
-    //instanceAdd();
-    instanceModify();
+    int n;
+    printf("1 for instanceAdd , 2 for instanceModify:");
+    scanf("%d", &n);
+    if (n == 1) {
+        instanceAdd();
+    }
+    else if (n == 2) {
+        instanceModify();
+    }
+
     return 0;
 }
 
@@ -101,18 +109,4 @@ void instanceModify() {   //modifying instance
     }
 
     close(fd_destinations);
-}
-
-int main(void) {
-    int n;
-    printf("1 for instanceAdd , 2 for instanceModify:");
-    scanf("%d", &n);
-    if (n == 1) {
-        instanceAdd();
-    }
-    else if (n == 2) {
-        instanceModify();
-    }
-
-    return 0;
 }
