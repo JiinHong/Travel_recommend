@@ -29,7 +29,7 @@ void instanceAdd() {
     int i;
     FILE* f_destinations;
 
-    f_destinations = fopen("travel_destinations.txt", "a");
+    f_destinations = fopen("travel_destinations", "a");
 
     printf("instance name: ");
     scanf("%s", name);
@@ -72,7 +72,7 @@ void instanceModify() {   //modifying instance
     char temp[8192] = { 0, };
     int n, num = 0, end = 1, i = 0, val;
 
-    fd_destinations = open("travel_destinations.txt", O_RDWR);
+    fd_destinations = open("travel_destinations", O_RDWR);
 
     n = read(fd_destinations, temp, 8192);
 
