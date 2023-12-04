@@ -192,7 +192,7 @@ void readCumulativeData(struct CumulativeData *data) {
         exit(1);
     }
 
-    fscanf(file, "beach,%d\n", &data->adventure);
+    fscanf(file, "beach,%d\n", &data->beach);
     fscanf(file, "mountain,%d\n", &data->mountain);
     fscanf(file, "forest,%d\n", &data->forest);
     fscanf(file, "river,%d\n", &data->river);
